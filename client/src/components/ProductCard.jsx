@@ -10,7 +10,7 @@ import {
     Stack,
     Link,
     HStack,
-    Text, useColorMode,
+    Text,
     Box,
 } from "@chakra-ui/react";
 
@@ -70,15 +70,14 @@ const ProductCard = ({ product }) => {
 
             <Box flex='1' maxH='5' alignItems='baseline'>
                 {product.stock <= 0 && (
-                    <Badge rounded='full' px='2' fontSize='0.8em' colorScheme='red'>
+                    <Badge rounded="full" px='2' fontSize='1em' fontWeight='bold' backgroundColor='red.200' color='red.800'>
                         Sold out
-                    </Badge>)
-                }
+                    </Badge>)}
                 {product.isNew && (
-                    <Badge rounded='full' px='2' fontSize='0.8em' colorScheme='green'>
+                    <Badge rounded='full' px='2' fontSize='1em' fontWeight='bold' backgroundColor='green.200' color='green.800'>
                         New
-                    </Badge>)
-                }
+                    </Badge>
+                )}
             </Box>
 
             <Flex mt='1' justifyContent='space-between' alignContent='center'>
