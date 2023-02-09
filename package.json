@@ -1,0 +1,26 @@
+{
+  "name": "ecommerce-nextjs-chakraui-project",
+  "version": "1.0.0",
+  "description": "The backend for ecommerce site",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris0512/ecommerce-nextjs-chakraui-project.git"
+  },
+  "author": "Chris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chris0512/ecommerce-nextjs-chakraui-project/issues"
+  },
+  "homepage": "https://github.com/chris0512/ecommerce-nextjs-chakraui-project#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1"
+  }
+}
