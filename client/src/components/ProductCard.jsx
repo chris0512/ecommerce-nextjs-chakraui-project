@@ -19,7 +19,7 @@ import { Link as ReactLink } from "react-router-dom";
 import { StarIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 
-const Rating = ({rating, numReviews}) => {
+const Rating = ({rating, numberOfReviews}) => {
     const { iconSize, setIconSize } = useState('14px');
     return (
         <Flex>
@@ -31,7 +31,7 @@ const Rating = ({rating, numReviews}) => {
                 <StarIcon size={iconSize} w='14px' color={rating >= 5? 'orange.500': 'gray.200'}></StarIcon>
             </HStack>
             <Text fontSize='md' fontWeight='bold' ml='4px'>
-                {`${numReviews} ${numReviews === 1? 'Review': 'Reviews'}`}
+                {`${numberOfReviews} ${numberOfReviews === 1? 'Review': 'Reviews'}`}
             </Text>
         </Flex>
     )
@@ -50,7 +50,7 @@ const ProductCard = ({ product }) => {
             shadow='lg'
             position='relative'
         >
-            {product.isNew && <Circle
+            {product.productIsNew && <Circle
                                 size='10px'
                                 position='absolute'
                                 top='2'
@@ -73,7 +73,7 @@ const ProductCard = ({ product }) => {
                     <Badge rounded="full" px='2' fontSize='1em' fontWeight='bold' backgroundColor='red.200' color='red.800'>
                         Sold out
                     </Badge>)}
-                {product.isNew && (
+                {product.productIsNew && (
                     <Badge rounded='full' px='2' fontSize='1em' fontWeight='bold' backgroundColor='green.200' color='green.800'>
                         New
                     </Badge>
@@ -88,7 +88,7 @@ const ProductCard = ({ product }) => {
                 </Link>
             </Flex>
             <Flex justifyContent='space-between' alignContent='center' py='2'>
-                <Rating rating={product.rating} numReviews={product.numReviews}></Rating>
+                <Rating rating={product.rating} numberOfReviews={product.numberOfReviews}></Rating>
             </Flex>
             <Flex justify='space-between'>
                 <Box fontSize='2xl' color={useColorModeValue('gray.800', 'white')}>
