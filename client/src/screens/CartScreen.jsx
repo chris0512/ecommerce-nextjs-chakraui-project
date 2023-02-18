@@ -39,19 +39,13 @@ const CartScreen = () => {
                             justifyContent='center'
                             textAlign='center'
                             height='200px'>
-                                <AlertIcon />
+                                <AlertIcon  />
                                 <AlertTitle>We are sorry!</AlertTitle>
                                 <AlertDescription>{error}</AlertDescription>
                         </Alert>
                     ) : cart.length <= 0 ? (
-                        <Alert status='warning'
-                               variant='subtle'
-                               flexDirection='column'
-                               alignItems='center'
-                               justifyContent='center'
-                               textAlign='center'
-                               height='200px'>
-                                <AlertIcon />
+                        <Alert status='warning' fontSize='20px' fontWeight={600} paddingTop={5} paddingBottom={5}  backgroundColor='red.500'>
+                                <AlertIcon boxSize={30} marginRight={3} marginLeft={3}/>
                                 <AlertTitle>Your cart is empty.</AlertTitle>
                                 <AlertDescription>
                                         <Link as={ReactLink} to='/products'>

@@ -34,8 +34,8 @@ const ProductsScreen = () => {
                 </Stack>):
                 error? (
                         <Alert status='error'>
-                            <AlertIcon />
-                            <AlertTitle>There is something wrong!</AlertTitle>
+                            <AlertIcon boxSize='40px' mr={0} />
+                            <AlertTitle mt={4} mb={1} fontSize='lg'>There is something wrong!</AlertTitle>
                             <AlertDescription>{error}</AlertDescription>
                         </Alert>
                     ):(
