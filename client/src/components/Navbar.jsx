@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
     Box,
     Flex,
@@ -44,6 +44,7 @@ const NavLink = ({ path, children}) => (
 const Navbar = () => {
     const { isOpen, onClose, onOpen} = useDisclosure();
     const { colorMode, toggleColorMode } = useColorMode();
+    const [isHovering, setIsHovering] = useState(false);
 
     return (
         <Box bg={ useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -51,7 +52,10 @@ const Navbar = () => {
                 <IconButton size='md' icon={ isOpen? <CloseIcon />: <HamburgerIcon />} display={{ md: 'none'}} onClick={isOpen? onClose: onOpen}/>
 
                 <HStack>
-                    <Link as={ReactLink} to='/'>
+                    <Link as={ReactLink} to='/' style={{textDecoration: 'none'}}
+                        onMouseEnter={()=> setIsHovering(true)}
+                        onMouseLeave={() => setIsHovering(false)}
+                    >
                         <Flex alignItems='center'>
                             <Icon as={GiShoppingBag} h={6} w={6} color="orange.400" />
                             <Text fontWeight='extrabold'>Shopping Site</Text>
