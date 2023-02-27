@@ -23,7 +23,7 @@ const loginUser = asyncHandler(async (req, res) => {
             email: user.email,
             isAdmin: user.isAdmin,
             token: genToken(user._id)
-        })
+        });
     } else {
         res.status(401);
         throw new Error('Invalid email or password.');
